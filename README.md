@@ -39,7 +39,7 @@ spec:
 - If labels do not exist a predefined role of `worker` should be assigned to a node.
 - In cluster Deployment Strategy 
 - Assign multiple Node Roles???
-## Research Notes
+## Research
 
 - https://github.com/weaveworks/eksctl/issues/2197
 - https://github.com/kubernetes/kubernetes/issues/84912#issuecomment-551362981
