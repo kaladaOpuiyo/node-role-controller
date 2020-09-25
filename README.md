@@ -36,7 +36,7 @@ spec:
 ## Deployment 
 
 ## Todo
-- If labels and annotations do not exist a predefined role of `worker` will assigned to a node.
+- If labels do not exist a predefined role of `worker` should be assigned to a node.
 - In cluster Deployment Strategy 
 - Assign multiple Node Roles???
 ## Research Notes
