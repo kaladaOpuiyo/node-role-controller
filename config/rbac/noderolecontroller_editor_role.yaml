@@ -1,0 +1,24 @@
+# permissions for end users to edit noderolecontrollers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: noderolecontroller-editor-role
+rules:
+- apiGroups:
+  - operators.node.role.controller.io
+  resources:
+  - noderolecontrollers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - operators.node.role.controller.io
+  resources:
+  - noderolecontrollers/status
+  verbs:
+  - get

@@ -1,0 +1,11 @@
+domain: node.role.controller.io
+layout: go.kubebuilder.io/v2
+projectName: node-role-controller
+repo: github.com/kaladaOpuiyo/node-role-controller
+resources:
+- group: operators
+  kind: NodeRoleController
+  version: v1alpha1
+version: 3-alpha
+plugins:
+  go.sdk.operatorframework.io/v2-alpha: {}

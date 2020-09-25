@@ -1,0 +1,20 @@
+# permissions for end users to view noderolecontrollers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: noderolecontroller-viewer-role
+rules:
+- apiGroups:
+  - operators.node.role.controller.io
+  resources:
+  - noderolecontrollers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - operators.node.role.controller.io
+  resources:
+  - noderolecontrollers/status
+  verbs:
+  - get
