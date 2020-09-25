@@ -2,12 +2,12 @@
 
 ## Introduction/Synopsis
 
-Due to change introduced in k8s 1.16, 
+Due to changes introduced in k8s 1.16, 
 
 *"Nodes are not permitted to assert their own role labels. Node roles are typically used to identify privileged or control plane types of nodes, and allowing nodes to label themselves into that pool allows a compromised node to trivially attract workloads."* 
 [Kubelet label migration for NodeRestriction Admission Controller](https://github.com/kubernetes/kubernetes/issues/84912#issuecomment-551362981)
 
-This simple controller overcomes these changes by assigning a role from existing labels to a node. 
+This simple controller overcomes this by assigning a role from existing labels to a node. 
 
 ## Usage
 
