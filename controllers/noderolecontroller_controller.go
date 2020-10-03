@@ -37,6 +37,7 @@ import (
 var (
 	err error
 	c   = &v1alpha1.NodeRoleController{}
+	n   = &corev1.Node{}
 )
 
 const (
@@ -72,7 +73,7 @@ func (r *NodeRoleControllerReconciler) Reconcile(req ctrl.Request) (ctrl.Result,
 			}
 		}
 	}
-	n := &corev1.Node{}
+
 	if req.Namespace == "" {
 		err = r.Client.Get(ctx, req.NamespacedName, n)
 		if err != nil {
