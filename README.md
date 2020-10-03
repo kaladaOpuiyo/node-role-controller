@@ -34,6 +34,9 @@ spec:
 ```
 
 ## Deployment 
+```
+helm3 upgrade node-role-controller ./chart/node-role-controller --install --debug --wait --namespace="operations" 
+```
 
 ## Todo
 - If labels and annotations do not exist a predefined role of `worker` will assigned to a node.

@@ -1,0 +1,14 @@
+replicaCount: 1
+image:
+  repository: kalada2018/node-role-controller
+  tag: 0.0.1
+  pullPolicy: Always
+app:
+  name: node-role-controller
+resources:
+  limits:
+    cpu: 100m
+    memory: 100Mi
+  requests:
+    cpu: 100m
+    memory: 100Mi

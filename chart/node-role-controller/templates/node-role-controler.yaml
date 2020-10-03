@@ -1,0 +1,19 @@
+apiVersion: operators.node.role.controller.io/v1alpha1
+kind: NodeRoleController 
+metadata:
+  name: {{ .Values.app.name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  roles:
+    - name: "ingress"
+      label: "node.kubernetes.io/ingress"
+      value: ""
+    - name: "worker"
+      label: "node.kubernetes.io/worker"
+      value: ""
+    - name: "worker-nat"
+      label: "node.kubernetes.io/worker"
+      value: "nat"
+    - name: "worker-nat"
+      label: "node.kubernetes.io/worker-nat"
+      value: ""

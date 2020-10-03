@@ -1,0 +1,4 @@
+apiVersion: v2
+description: A controller adds a role from existing labels to a node.
+name: node-role-controller
+version: 0.0.1
