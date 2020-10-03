@@ -29,6 +29,8 @@ spec:
         - name:  {{ .Values.app.name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+          - "--zap-log-level={{ .Values.logLevel}}"
           resources:
 {{ toYaml .Values.resources | indent 12 }}
          

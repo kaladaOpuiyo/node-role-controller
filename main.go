@@ -25,6 +25,7 @@ import (
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 	ctrl "sigs.k8s.io/controller-runtime"
+	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	operatorsv1alpha1 "github.com/kaladaOpuiyo/node-role-controller/api/v1alpha1"
@@ -51,7 +52,18 @@ func main() {
 	flag.BoolVar(&enableLeaderElection, "enable-leader-election", false,
 		"Enable leader election for controller manager. "+
 			"Enabling this will ensure there is only one active controller manager.")
+
+	opts := zap.Options{}
+	opts.BindFlags(flag.CommandLine)
 	flag.Parse()
+
+	logger := zap.New(zap.UseFlagOptions(&opts))
+	logf.SetLogger(logger)
+
+	setupLog.Info("Printing at INFO level")
+	setupLog.V(1).Info("Printing at DEBUG level")
+	setupLog.Info("Printing at INFO level")
+	setupLog.V(1).Info("Printing at DEBUG level")
 
 	ctrl.SetLogger(zap.New(zap.UseDevMode(true)))
 
@@ -75,7 +87,7 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "NodeRoleController")
 		os.Exit(1)
 	}
-	// +kubebuilder:scaffold:builder
+	// +kubebuilder:scaffold:builders
 
 	setupLog.Info("starting manager")
 	if err := mgr.Start(ctrl.SetupSignalHandler()); err != nil {
