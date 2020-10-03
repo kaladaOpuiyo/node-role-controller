@@ -40,7 +40,7 @@ helm3 upgrade node-role-controller ./chart/node-role-controller --install --debu
 
 ## Todo
 - If labels do not exist a predefined role of `worker` should be assigned to a node.
-- In cluster Deployment Strategy 
+- ~In cluster Deployment Strategy~ 
 - Assign multiple Node Roles???
 ## Research
 
